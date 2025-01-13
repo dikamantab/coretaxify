@@ -14,17 +14,17 @@ const Section = () => {
   return (
     <section className="secIntro">
       <div className="section-container">
-        <div className="profile-wrapper">
+        <div className="profile-wrapper" data-aos="fade-up">
           <img className="profile-image" src={wulan} alt="Putri Nuril Wulanatining Asih" />
         </div>
         <div className="content-container">
-          <div className="name">Putri Nuril Wulanatining Asih, S.Pd., M.Ak</div>
+          <div className="name" data-aos="fade-up">Putri Nuril Wulanatining Asih, S.Pd., M.Ak</div>
           <div className="tag-container">
-            <div className="tag">Ahli Pajak</div>
+            <div className="tag" data-aos="fade-up">Ahli Pajak</div>
           </div>
-          <div className="description">Bergabunglah dengan saya dalam menguasai dunia pajak</div>
+          <div className="description" data-aos="fade-up">Bergabunglah dengan saya dalam menguasai dunia pajak</div>
         </div>
-        <div className="button-container">
+        <div className="button-container" data-aos="fade-up">
           <button className="profile-button" onClick={() => navigate('/')}>Lihat Profil</button>
         </div>
       </div>

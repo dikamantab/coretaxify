@@ -17,7 +17,7 @@ const Home = () => {
             <div className="secContainer">
                 <div className="homeText">
                     <h1 data-aos="fade-up" className="title">
-                        Selamat Datang di Platform <br /> Belajar Pajak Kursus Pajak
+                        Selamat Datang di Coretaxify <br /> Belajar Pajak Lebih Menyenangkan
                     </h1>
                     <p data-aos="fade-up" data-aos-duration="2500" className="subTitle">
                         Meningkatkan Pengetahuan Pajak Anda <br /> dengan Mudah dan Menyenangkan

@@ -1,5 +1,5 @@
 :root {
-  --PrimaryColor: hsl(46, 100%, 51%);
+  --PrimaryColor: hsl(46, 100%, 51%); 
   --HoverColor: hsl(26, 90%, 42%);
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 18%);
@@ -58,7 +58,7 @@
   z-index: 1000;
 }
 .navBarSection .header .logoDiv .logo {
-  color: var(--PrimaryColor);
+  color: linier-gradient(90deg, #4652f9, #f9a346);
   font-weight: 500;
   cursor: pointer;
   align-items: center;
