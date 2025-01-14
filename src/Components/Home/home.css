@@ -29,7 +29,9 @@
   width: 100%;
 }
 .home .secContainer .homeText .title {
-  color: #FDB29C;
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   font-size: 1rem;
   font-weight: 700;
   line-height: 2.5rem;

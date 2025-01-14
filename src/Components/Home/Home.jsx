@@ -17,10 +17,10 @@ const Home = () => {
             <div className="secContainer">
                 <div className="homeText">
                     <h1 data-aos="fade-up" className="title">
-                        Selamat Datang di Coretaxify <br /> Belajar Pajak Lebih Menyenangkan
+                        Selamat Datang di Coretaxify <br /> 
                     </h1>
                     <p data-aos="fade-up" data-aos-duration="2500" className="subTitle">
-                        Meningkatkan Pengetahuan Pajak Anda <br /> dengan Mudah dan Menyenangkan
+                        Coretaxfy adalah aplikasi praktikum perpajakan berbasis website yang dirancang khusus oleh generasi muda sebagai upaya untuk memberikan solusi tepat dan relevan dalam menunjang kebutuhan bidang edukasi serta praktisi perpajakan.    
                     </p>
                     <button data-aos="fade-up" data-aos-duration="3000" className='btn'>
                         <a onClick={() => navigate('/package')}>Mulai Sekarang</a>
