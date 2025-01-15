@@ -4,6 +4,7 @@ import { TbReceiptTax } from "react-icons/tb";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import IconLogo from '../../Assets/image/5.png';
 import LoginPopup from '../Login/Login';
 import RegisterPopup from '../Register/Register';
 
@@ -53,7 +54,7 @@ const Navbar = () => {
           <div className="logoDiv">
             <a href="/" className="logo">
               <h1 className="flex">
-                <TbReceiptTax className="icon" />
+                <img src={IconLogo} alt="logo" className="icon" />
                 Coretaxify
               </h1>
             </a>

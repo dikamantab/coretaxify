@@ -8,14 +8,14 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
-  transform: translateY(-20px); /* Mulai dari posisi sedikit di atas */
+  transform: translateY(-20px) scale(0.8); /* Mulai dari posisi sedikit di atas */
   opacity: 0; /* Mulai dengan transparansi 0 */
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Animasi transisi */
+  transition: color 0.3s ease-out, opacity 0.3s ease-out; /* Animasi transisi */
 }
 
 /* Ketika pop-up muncul */
 .login-popup.show {
-  transform: translateY(0); /* Posisi normal */
+  transform: translateY(0) scale(1); /* Posisi normal */
   opacity: 1; /* Menjadi sepenuhnya terlihat */
 }
 
@@ -117,7 +117,7 @@
 
 /* Login button */
 .login-button {
-  background: #6c5ce7;
+  background: purple;
   color: white;
   border: none;
   padding: 10px;
@@ -128,7 +128,7 @@
 }
 
 .login-button:hover {
-  background: #5e50c9;
+  background: #6a0085;
 }
 
 /* Register text */

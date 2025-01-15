@@ -37,7 +37,7 @@ const RegisterPopup = ({ isOpen, onClose }) => {
 
     // Validasi password dan repeat password
     if (password !== repeatPassword) {
-      setPasswordError('Password dan Repeat Password tidak cocok');
+      setPasswordError('Password anda tidak sama');
       return;
     }
 

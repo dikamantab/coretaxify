@@ -54,7 +54,7 @@
   background: transparent;
   width: 100%;
   padding: 1rem;
-  z-index: 1000;
+  z-index: 5;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -64,16 +64,33 @@
 }
 
 .logoDiv .logo {
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: transparent;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+   
+  white-space: nowrap;
+  overflow: visible; /* Prevent text clipping */
+  z-index: 1000;
+  position: relative;
+}
+
+.logoDiv .logo {
+  max-width: 100%;
+  text-overflow: clip;
 }
 
 .logoDiv .logo .icon {
   color: var(--PrimaryColor);
   font-size: 25px;
   margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .navBar {
@@ -88,6 +105,7 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex-wrap: nowrap; /* Prevent line breaks */
 }
 
 .navItem .navLink {
