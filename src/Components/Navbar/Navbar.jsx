@@ -97,13 +97,13 @@ const Navbar = () => {
                   className="signInBtn"
                   onClick={openLoginPopup} // Panggil fungsi untuk membuka login popup
                 >
-                  Sign In
+                  Login
                 </button>
                 <button 
                   className="signUpBtn"
                   onClick={openRegisterPopup} // Panggil fungsi untuk membuka register popup
                 >
-                  Sign Up
+                  Register
                 </button>
               </li>
             </ul>

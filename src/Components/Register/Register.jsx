@@ -3,7 +3,7 @@ import './register.css';
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";  // Import kedua ikon ini
 import CTaxifyLogo from '../../Assets/image/1.png';
 
-const RegisterPopup = ({ isOpen, onClose }) => {
+const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Aos from 'aos';
 import Section from '../Section/Section';
 import Fitur from '../Fitur/Fitur';
-
+import Benefit from '../Benefit/Benefit';
 import 'aos/dist/aos.css';
 
 const handleClicked = () => {
@@ -35,6 +35,7 @@ const Home = () => {
         </section>
         <Section />
         <Fitur />
+        <Benefit />
         </>
     );
 }
