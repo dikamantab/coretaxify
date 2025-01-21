@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import IconLogo from '../../Assets/image/5.png';
 import LoginPopup from '../Login/Login';
 import RegisterPopup from '../Register/Register';
+import ForgotPopup from '../Forgot_Password/Forgot_password';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Navbar = () => {
   const [transparent, setTransparent] = useState("header activeHeader");
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [showRegisterPopup, setShowRegisterPopup] = useState(false);
+  const [showForgotPopup, setShowForgotPopup] = useState(false);
 
   const showNav = () => {
     setActive("navBar activeNavbar");
@@ -38,13 +40,15 @@ const Navbar = () => {
   // Fungsi untuk membuka register popup, dan menutup login popup
   const openRegisterPopup = () => {
     setShowRegisterPopup(true);
-    setShowLoginPopup(false);  // Menutup LoginPopup jika RegisterPopup dibuka
+    setShowLoginPopup(false); 
+    setShowForgotPopup(false); // Menutup LoginPopup jika RegisterPopup dibuka
   };
 
   // Fungsi untuk membuka login popup, dan menutup register popup
   const openLoginPopup = () => {
     setShowLoginPopup(true);
-    setShowRegisterPopup(false);  // Menutup RegisterPopup jika LoginPopup dibuka
+    setShowRegisterPopup(false);
+    setShowForgotPopup(false);  // Menutup RegisterPopup jika LoginPopup dibuka
   };
 
   return (
@@ -123,7 +127,10 @@ const Navbar = () => {
       <LoginPopup isOpen={showLoginPopup} onClose={() => setShowLoginPopup(false)} openRegisterPopup={openRegisterPopup} />
         
       {/* Pop-up Register */} 
-      <RegisterPopup isOpen={showRegisterPopup} onClose={() => setShowRegisterPopup(false)} />
+      <RegisterPopup isOpen={showRegisterPopup} onClose={() => setShowRegisterPopup(false)} openLoginPopup={openLoginPopup}/>
+
+      {/* Pop-up Forgot Password */}
+      <ForgotPopup isOpen={showForgotPopup} onClose={() => setShowForgotPopup(false)} openLoginPopup={openLoginPopup} />
     </>
   );
 };

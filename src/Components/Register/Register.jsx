@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './register.css';
-import { FaRegEye, FaEyeSlash } from "react-icons/fa";  // Import kedua ikon ini
+import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import CTaxifyLogo from '../../Assets/image/1.png';
 
 const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
@@ -51,7 +51,7 @@ const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
     <div className={`register-popup-overlay ${isOpen ? 'show' : ''}`}>
       <div className={`register-popup ${isOpen ? 'show' : ''}`}>
         <img src={CTaxifyLogo} alt="CTaxify Logo" className="logo" />
-        <p className="tagline">bergabunglah bersama kami untuk menjadi insan yang taat pajak</p>
+        <p className="tagline">Mari gabung dengan kami menjadi masa depan sadar pajak</p>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
@@ -118,6 +118,9 @@ const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
 
           <button type="submit" className="register-button">Register</button>
         </form>
+        <p className="login-text">
+          Memiliki akun? <a href="#" onClick={openLoginPopup}>Silahkan Login</a> {/* Menampilkan LoginPopup */}
+        </p>
         <button className="close-button" onClick={onClose}>
           ✖
         </button>
