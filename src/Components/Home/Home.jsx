@@ -5,6 +5,8 @@ import Aos from 'aos';
 import Section from '../Section/Section';
 import Fitur from '../Fitur/Fitur';
 import Benefit from '../Benefit/Benefit';
+import Articles from '../Articles/Articles';
+import Partner from '../Partner/Partner';
 import 'aos/dist/aos.css';
 
 const handleClicked = () => {
@@ -36,6 +38,8 @@ const Home = () => {
         <Section />
         <Fitur />
         <Benefit />
+        <Articles />
+        <Partner />
         </>
     );
 }

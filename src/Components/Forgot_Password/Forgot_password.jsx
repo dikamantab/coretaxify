@@ -14,7 +14,7 @@ const ForgotPopup = ({ isOpen, onClose, openRegisterPopup }) => {
                                         <img src={CTaxifyLogo} alt="CTaxify Logo" className="logo" />
                                         <p className="tagline">bergabunglah bersama kami untuk menjadi insan yang taat pajak</p>
                                         <form className="login-form">
-                                                  <label htmlFor="email">Email</label>
+                                                  <label htmlFor="email">Email Lupa Password</label>
                                                   <input type="text" id="email" placeholder="Enter your email" />
                                                   <button type="submit" className="login-button">Confirm</button>
                                         </form>
