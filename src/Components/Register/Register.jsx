@@ -10,6 +10,7 @@ const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [showRegistrationCode, setShowRegistrationCode] = useState(false); // State untuk menampilkan kode registrasi
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -114,9 +115,30 @@ const RegisterPopup = ({ isOpen, onClose, openLoginPopup }) => {
             </div>
           </div>
 
-          {passwordError && <p className="error-message">{passwordError}</p>}
+          {!showRegistrationCode ? (
+            <div className="register-button-container">
+              <button type="button" className="register-button">
+                Coba Gratis 14 Hari
+              </button>
+              <button
+                type="button"
+                className="register-button"
+                onClick={() => setShowRegistrationCode(true)} // Menampilkan kode registrasi
+              >
+                Premium
+              </button>
+            </div>
+          ) : (
+            <div className="form-group">
+              <label htmlFor="registration-code">Kode Registrasi</label>
+              <input type="text" id="registration-code" placeholder="Masukkan Kode Registrasi" />
+              <button type="submit" className="register-button">
+                Daftar Sekarang
+              </button>
+            </div>
+          )}
 
-          <button type="submit" className="register-button">Register</button>
+          {passwordError && <p className="error-message">{passwordError}</p>}
         </form>
         <p className="login-text">
           Memiliki akun? <a href="#" onClick={openLoginPopup}>Silahkan Login</a> {/* Menampilkan LoginPopup */}

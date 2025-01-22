@@ -142,6 +142,14 @@
   margin-top: 10px;
 }
 
+.register-button-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 180px;/* Mengurangi jarak atas dan bawah */
+}
+
 .register-button:hover {
   background: #6a0085;
 }
