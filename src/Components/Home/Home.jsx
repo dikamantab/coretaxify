@@ -7,6 +7,8 @@ import Fitur from '../Fitur/Fitur';
 import Benefit from '../Benefit/Benefit';
 import Articles from '../Articles/Articles';
 import Partner from '../Partner/Partner';
+import TotalUser from '../TotalUser/TotalUser';
+import Testimoni from '../Testimoni/Testimoni'; 
 import 'aos/dist/aos.css';
 
 const handleClicked = () => {
@@ -40,6 +42,8 @@ const Home = () => {
         <Benefit />
         <Articles />
         <Partner />
+        <TotalUser />
+        <Testimoni />
         </>
     );
 }

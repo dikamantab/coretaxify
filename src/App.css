@@ -43,6 +43,13 @@ li{
   cursor: pointer;
 }
 
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rem;
+}
+
 .flex{
   display: flex;
   align-items: center;
