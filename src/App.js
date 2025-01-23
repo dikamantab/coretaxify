@@ -9,10 +9,10 @@ import Articles from './Components/Articles/Articles';
 import Partner from './Components/Partner/Partner';
 import TotalUser from './Components/TotalUser/TotalUser';
 import Testimoni from './Components/Testimoni/Testimoni';
+import SidebarAdmin from './Components/Admin/SidebarAdmin/SidebarAdmin';
 import DashboardAdmin from './Components/Admin/Dashboard/DashboardAdmin';
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import SyncLoader from 'react-spinners/SyncLoader';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ const App = () => {
     }, 3000);
   }, []);
   return (
-    loading ? <div className="loading"><SyncLoader color="#7502B5" size={20} /></div> :
+    loading ? <div className="loading"><ClipLoader color="#7502B5" size={50} /></div> :
     <Router>
       <Routes>
         <Route
@@ -97,20 +97,15 @@ const App = () => {
             </>
           }
         />
-        <Route path="/admin" element={<Sidebar>
-          <Menu menuItemStyles={{
-            button: {
-              // the active class will be added automatically by react router
-              // so we can use it to style the active menu item
-              [`&.active`]: {
-                backgroundColor: '#13395e',
-                color: '#b6c8d9',
-              },
-            },
-          }}>
-            <MenuItem component={<Link to="/DashboardAdmin" />}> Dashboard</MenuItem>
-          </Menu>
-        </Sidebar>} />
+        <Route
+          path="/admin"
+          element={
+            <>
+              <SidebarAdmin />
+              <DashboardAdmin />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
