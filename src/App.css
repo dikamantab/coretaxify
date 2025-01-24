@@ -43,6 +43,37 @@ li{
   cursor: pointer;
 }
 
+/* Admin Layout */
+.admin-layout {
+  display: flex;
+  /* Mengatur sidebar dan konten berdampingan */
+  height: 100vh;
+  /* Sidebar dan konten mengisi seluruh tinggi layar */
+  width: 100%;
+  /* Mengisi seluruh lebar layar */
+}
+
+.admin-content {
+  flex: 1;
+  /* Isi ruang yang tersisa setelah sidebar */
+  margin-left: 250px;
+  /* Jarak default dari sidebar saat terbuka */
+  padding: 20px;
+  overflow-y: auto;
+  /* Konten dapat di-scroll jika lebih tinggi dari layar */
+  transition: margin-left 0.3s ease;
+  /* Efek transisi saat sidebar dibuka/tutup */
+  background-color: var(--greyBg);
+  /* Warna latar belakang konten */
+}
+
+.sidebar.closed+.admin-content {
+  margin-left: 80px;
+  /* Sesuaikan jarak dengan lebar sidebar yang tertutup */
+}
+
+
+
 .loading{
   display: flex;
   align-items: center;

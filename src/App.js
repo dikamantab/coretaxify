@@ -97,15 +97,17 @@ const App = () => {
             </>
           }
         />
-        <Route
-          path="/admin"
-          element={
-            <>
-              <SidebarAdmin />
-              <DashboardAdmin />
-            </>
-          }
-        />
+          <Route
+            path="/admin"
+            element={
+              <div className="admin-layout">
+                <SidebarAdmin />
+                <div className="admin-content">
+                  <DashboardAdmin />
+                </div>
+              </div>
+            }
+          />
       </Routes>
     </Router>
   );

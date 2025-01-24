@@ -24,7 +24,7 @@
 }
 
 .sidebar-logo {
-          width: 140px;
+          width: 200px;
 }
 
 .menu-toggle {
@@ -47,6 +47,7 @@
           transition: background-color 0.2s ease;
 }
 
+
 .menu-item:hover {
           background-color: #ececec;
 }
@@ -68,4 +69,46 @@
 
 .sidebar.closed .menu-icon {
           margin-right: 0;
+}
+
+/* Dropdown Menu */
+.dropdown {
+          position: relative;
+}
+
+.dropdown-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+}
+
+.dropdown-menu {
+          list-style: none;
+          padding: 0;
+          /* Hilangkan padding default */
+          margin: 0;
+          /* Hilangkan margin default */
+          margin-left: 1.5rem;
+          /* Sesuaikan jika ingin ada sedikit indentasi */
+}
+
+.dropdown-item {
+          padding: 0.5rem 1rem;
+          /* Tambahkan padding internal */
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+          background-color: #ececec;
+}
+
+.dropdown-icon {
+          font-size: 0.8rem;
+          transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotate {
+          transform: rotate(180deg);
 }
