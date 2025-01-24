@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
           Chart as ChartJS,
           CategoryScale,
@@ -7,20 +7,13 @@ import {
           Title,
           Tooltip,
           Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import './dashboardAdmin.css';
-import { FaUsers } from 'react-icons/fa';
-import ClipLoader from 'react-spinners/ClipLoader';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import "./dashboardAdmin.css";
+import { FaUsers } from "react-icons/fa";
+import ClipLoader from "react-spinners/ClipLoader";
 
-ChartJS.register(
-          CategoryScale,
-          LinearScale,
-          BarElement,
-          Title,
-          Tooltip,
-          Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const DashboardAdmin = () => {
           const [chartData, setChartData] = useState({
@@ -30,45 +23,55 @@ const DashboardAdmin = () => {
           const [userData, setUserData] = useState({
                     totalPengguna: 0,
                     pembimbing: 0,
-                    mahasiswa: 0
-          })
-
-
+                    mahasiswa: 0,
+          });
+          const [selectedYear, setSelectedYear] = useState(2024); // Tambahkan state untuk tahun
 
           useEffect(() => {
-                    // Simulasi fetching data dari API
                     const fetchData = async () => {
                               try {
-                                        // Ganti ini dengan fetch API yang sesungguhnya
+                                        // Simulasi data berdasarkan tahun
                                         const dataFromApi = await new Promise((resolve) => {
                                                   setTimeout(() => {
                                                             resolve({
-                                                                      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                                                                      labels: [
+                                                                                "Jan",
+                                                                                "Feb",
+                                                                                "Mar",
+                                                                                "Apr",
+                                                                                "Mei",
+                                                                                "Jun",
+                                                                                "Jul",
+                                                                                "Agu",
+                                                                                "Sep",
+                                                                                "Okt",
+                                                                                "Nov",
+                                                                                "Des",
+                                                                      ],
                                                                       datasets: [
                                                                                 {
-                                                                                          label: 'Total Pengguna',
+                                                                                          label: "Total Pengguna",
                                                                                           data: [250, 280, 290, 310, 240, 200, 400, 300, 280, 250, 290, 200],
-                                                                                          backgroundColor: 'skyblue',
+                                                                                          backgroundColor: "skyblue",
                                                                                 },
                                                                                 {
-                                                                                          label: 'Pembimbing',
+                                                                                          label: "Pembimbing",
                                                                                           data: [200, 250, 270, 290, 220, 180, 350, 280, 250, 220, 270, 180],
-                                                                                          backgroundColor: 'royalblue',
+                                                                                          backgroundColor: "royalblue",
                                                                                 },
                                                                                 {
-                                                                                          label: 'Mahasiswa',
+                                                                                          label: "Mahasiswa",
                                                                                           data: [300, 320, 350, 330, 280, 220, 450, 350, 300, 280, 320, 250],
-                                                                                          backgroundColor: 'mediumblue',
+                                                                                          backgroundColor: "mediumblue",
                                                                                 },
                                                                       ],
                                                             });
-                                                  }, 1000); // Simulasi delay 1 detik
+                                                  }, 1000);
                                         });
 
                                         setChartData(dataFromApi);
                               } catch (error) {
                                         console.error("Error fetching data:", error);
-                                        // Handle error, misalnya dengan menampilkan pesan error ke user
                               }
                     };
 
@@ -79,67 +82,92 @@ const DashboardAdmin = () => {
                                                             resolve({
                                                                       totalPengguna: 1440,
                                                                       pembimbing: 1440,
-                                                                      mahasiswa: 1440
+                                                                      mahasiswa: 1440,
                                                             });
                                                   }, 500);
                                         });
-                                        setUserData(userDataFromApi)
+                                        setUserData(userDataFromApi);
                               } catch (error) {
-                                        console.error("Error fetching user data:", error)
+                                        console.error("Error fetching user data:", error);
                               }
-                    }
+                    };
 
                     fetchData();
                     fetchUserData();
-          }, []); // [] memastikan useEffect hanya dijalankan sekali setelah render pertama
+          }, [selectedYear]); // Tambahkan selectedYear ke dependency array
 
           const options = {
                     responsive: true,
                     plugins: {
                               legend: {
-                                        position: 'bottom',
+                                        position: "bottom",
                               },
                               title: {
                                         display: true,
-                                        text: 'Statistik Pertumbuhan Data 2024',
+                                        text: `Statistik Pertumbuhan Data Tahun ${selectedYear}`,
                               },
                     },
                     scales: {
                               x: {
-                                        stacked: true
+                                        stacked: true,
                               },
                               y: {
-                                        stacked: true
-                              }
-                    }
+                                        stacked: true,
+                              },
+                    },
+          };
+
+          const handleYearChange = (e) => {
+                    setSelectedYear(parseInt(e.target.value)); // Perbarui tahun berdasarkan pilihan
           };
 
           if (!chartData.labels.length) {
-                    return <div className="loading"><ClipLoader color="#7502B5" size={50} /></div>; // Tampilkan pesan loading
+                    return (
+                              <div className="loading">
+                                        <ClipLoader color="#7502B5" size={50} />
+                              </div>
+                    );
           }
 
           return (
                     <div className="dashboard-container">
+                              
                               <div className="card-container">
-                                        <div className="card card-purple"> {/* Tambah class card-purple */}
-                                                  <FaUsers className="card-icon" /> {/* Tambah ikon */}
+                                        <div className="card card-purple">
+                                                  <FaUsers className="card-icon" />
                                                   <h2>Total Pengguna</h2>
                                                   <p>{userData.totalPengguna}</p>
                                                   <p>Dari Sebelumnya 1000</p>
                                         </div>
-                                        <div className="card"> {/* Card default */}
+                                        <div className="card">
                                                   <FaUsers className="card-icon" />
                                                   <h2>Pembimbing</h2>
                                                   <p>{userData.pembimbing}</p>
                                                   <p>Dari Sebelumnya 1000</p>
                                         </div>
-                                        <div className="card"> {/* Card default */}
+                                        <div className="card">
                                                   <FaUsers className="card-icon" />
                                                   <h2>Mahasiswa</h2>
                                                   <p>{userData.mahasiswa}</p>
                                                   <p>Dari Sebelumnya 1000</p>
                                         </div>
                               </div>
+                              <div className="filter-container">
+                                        <label htmlFor="year-select">Pilih Tahun:</label>
+                                        <select
+                                                  id="year-select"
+                                                  value={selectedYear}
+                                                  onChange={handleYearChange}
+                                                  className="year-dropdown"
+                                        >
+                                                  {[2020, 2021, 2022, 2023, 2024, 2025].map((year) => (
+                                                            <option key={year} value={year}>
+                                                                      {year}
+                                                            </option>
+                                                  ))}
+                                        </select>
+                              </div>
+
                               <div className="chart-container">
                                         <Bar options={options} data={chartData} />
                               </div>

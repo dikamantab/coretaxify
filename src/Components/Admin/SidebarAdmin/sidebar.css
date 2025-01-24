@@ -73,7 +73,7 @@
 
 /* Dropdown Menu */
 .dropdown {
-          position: relative;
+position: relative;
 }
 
 .dropdown-header {
@@ -107,9 +107,9 @@
 
 .dropdown-item {
           padding: 0.5rem 1rem;
-          font-size: 0.9rem;
-          cursor: pointer;
-          color: #757575;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #757575;
 }
 
 .dropdown-item:hover {
