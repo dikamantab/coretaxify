@@ -84,20 +84,32 @@
 }
 
 .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          /* Posisikan tepat di bawah menu utama */
+          left: 0;
+          /* Sejajarkan ke kiri dengan menu utama */
+          background: #fff;
+          /* Pastikan latar belakang dropdown terlihat */
           list-style: none;
+          /* Hilangkan bullet point */
           padding: 0;
-          /* Hilangkan padding default */
+          /* Atur padding agar sesuai */
           margin: 0;
-          /* Hilangkan margin default */
-          margin-left: 1.5rem;
-          /* Sesuaikan jika ingin ada sedikit indentasi */
+          /* Hilangkan margin bawaan */
+          border: 1px solid #ececec;
+          /* Tambahkan border untuk estetika */
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          /* Tambahkan bayangan */
+          display: none;
+          /* Default: sembunyikan dropdown */
 }
 
 .dropdown-item {
           padding: 0.5rem 1rem;
-          /* Tambahkan padding internal */
+          font-size: 0.9rem;
           cursor: pointer;
-          transition: background-color 0.2s ease;
+          color: #757575;
 }
 
 .dropdown-item:hover {
@@ -111,4 +123,9 @@
 
 .dropdown-icon.rotate {
           transform: rotate(180deg);
+}
+
+.dropdown:hover .dropdown-menu {
+          display: block;
+          /* Tampilkan dropdown saat dihover */
 }

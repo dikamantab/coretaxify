@@ -11,6 +11,7 @@ import TotalUser from './Components/TotalUser/TotalUser';
 import Testimoni from './Components/Testimoni/Testimoni';
 import SidebarAdmin from './Components/Admin/SidebarAdmin/SidebarAdmin';
 import DashboardAdmin from './Components/Admin/Dashboard/DashboardAdmin';
+import Kontrak from './Components/Admin/Kontrak/Kontrak';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 
@@ -104,6 +105,17 @@ const App = () => {
                 <SidebarAdmin />
                 <div className="admin-content">
                   <DashboardAdmin />
+                </div>
+              </div>
+            }
+          />
+          <Route
+            path="/admin/kontrak"
+            element={
+              <div className="admin-layout">
+                <SidebarAdmin />
+                <div className="admin-content">
+                  <Kontrak />
                 </div>
               </div>
             }

@@ -23,13 +23,13 @@ const SidebarAdmin = () => {
                                         <FaBars className="menu-toggle" onClick={toggleSidebar} />
                               </div>
                               <ul className="sidebar-menu">
-                                        <li className="menu-item">
+                                        <li className="menu-item" onClick={() => { window.location.href = "/admin" }}>
                                                   <GiPieChart className="menu-icon" />
                                                   {isOpen && <span>Dashboard</span>}
                                         </li>
-                                        <li className="menu-item">
+                                        <li className="menu-item" onClick={() => { window.location.href = "/admin/kontrak" }}>
                                                   <FaBox className="menu-icon" />
-                                                  {isOpen && <span>Data Coretax</span>}
+                                                  {isOpen && <span>Kontrak</span>}
                                         </li>
                                         <li className="menu-item">
                                                   <FaLaptopCode className="menu-icon" />
