@@ -31,27 +31,27 @@
           margin-bottom: 20px;
 }
 
-.card-purple {
-          /* Style khusus untuk card pertama */
+.card:hover {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           background-color: #9370DB;
-          /* Warna ungu */
+          transform: translateY(-10px);
           color: white;
-          /* Teks putih */
-          border: none;
-          /* Menghapus border */
-          box-shadow: 0 2px 4px rgba(88, 88, 88, 0.1);
           border-radius: 8px;
+          /* Efek bayangan saat hover */
 }
 
-.card-purple h2 {
-          /* Style khusus untuk judul card pertama */
+.card:hover h2 {
           color: white;
 }
 
-.card-purple p {
-          /* Style khusus untuk deskripsi card pertama */
+.card:hover p {
           color: white;
 }
+
+.card:hover .card-icon {
+          color: white;
+}
+
 
 .card-icon {
           
@@ -66,9 +66,6 @@
           background-blend-mode: color-dodge;
 }
 
-.card-purple .card-icon {
-          color: white;
-}
 
 .filter-container {
           display: flex;
